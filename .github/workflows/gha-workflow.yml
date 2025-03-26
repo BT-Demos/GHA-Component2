@@ -7,23 +7,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: compile
-        run: echo "compile started..."
+      - name: Compile Code
+        run: echo "Compiling..."
 
-      - name: produce-binary
+      - name: Produce Binary
         run: sleep 10
 
-      - name: push-binary
-        run: echo "binary pushing..."
+      - name: Push binary
+        run: echo "Pushing Binary to ECR..."
 
       - name: register-build-artifacts
         uses: cloudbees-gha-cbp/register-build-artifact@main
         id: go-action
         with:
           name: "gha-artifact-test-1"
-          version: 1.0.0
+          version: 2.0.0
           url: "docker.io/calculi-corp/gha-action/gha-artifact-2:latest"
-          digest: "sha256:d4a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2"
+          digest: "sha256:e4a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2"
           type: "docker"
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
           cloudbees-pat: ${{ secrets.CBP_PAT }}
@@ -33,9 +33,9 @@ jobs:
     needs: [build]   # Depends on 'build' job
     steps:
       - name: Run tests
-        run: echo "tests running..."
+        run: echo "Running Tests..."
 
-      - name: Checkout Repository
+      - name: Collect Test Results
         uses: actions/checkout@v3
 
       - name: Publish Test Results for Go
@@ -51,9 +51,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build, test]   # Depends on both 'build' and 'test' jobs
     steps:
-      - name: prepare-deployment
-        run: sleep 15
-      - name: deploy app
+      - name: Prepare Manifest
+        uses: actions/checkout@v3
+        
+      - name: Trigger Deployment
         run: echo "Invoking CBP Deploy Workflow..."
 
 
