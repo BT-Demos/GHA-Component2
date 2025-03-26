@@ -46,4 +46,4 @@ jobs:
           test-type: GO
           folder-path: test_reports/*
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
-          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
+          cloudbees-pat: ${{ secrets.CBP_PAT }}
