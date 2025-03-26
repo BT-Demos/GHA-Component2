@@ -35,11 +35,16 @@ jobs:
       - name: Run tests
         run: echo "tests running..."
 
-      - name: Collect test results
-        run: sleep 17
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      - name: Publish test results
-        run: echo "Sending Test Results to CBP"
+      - name: Publish Test Results for Go
+        uses: cloudbees-gha-cbp/publish-test-results@main
+        with:
+          test-type: GO
+          folder-path: test_reports/*
+          cloudbees-url: "https://api.saas-preprod.beescloud.com"
+          cloudbees-pat: ${{ secrets.CBP_PAT }}
 
 
   deploy:
