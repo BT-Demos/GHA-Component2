@@ -26,14 +26,21 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Run My Custom Go Action
+      - name: Register Artifacts
         uses: cloudbees-gha-cbp/register-build-artifact@main
-        id: go-action
         with:
-          name: "gha-artifact-test-2"
-          version: 1.0.0
+          name: "gha-artifact-test-1"
+          version: 2.0.0
           url: "docker.io/calculi-corp/gha-action/gha-artifact-2:latest"
-          digest: "sha256:c4a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2"
+          digest: "sha256:e4a123ee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2"
           type: "docker"
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
           cloudbees-pat: ${{ secrets.CBP_PAT }}
+
+      - name: Publish Test Results for Go
+        uses: cloudbees-gha-cbp/publish-test-results@main
+        with:
+          test-type: GO
+          folder-path: test_data/go/*
+          cloudbees-url: "https://api.saas-preprod.beescloud.com"
+          cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
