@@ -44,6 +44,6 @@ jobs:
         uses: cloudbees-gha-cbp/publish-test-results@main
         with:
           test-type: GO
-          folder-path: ${{ cloudbees.workspace }}/test_reports
+          folder-path: test_reports/*
           cloudbees-url: "https://api.saas-preprod.beescloud.com"
           cloudbees-pat: ${{ secrets.CBP_GHA_PAT }}
