@@ -17,67 +17,80 @@
       {
         "name": "TestSkip",
         "status": "skipped",
-        "duration": 0
+        "duration": 0,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestAdd/ADD_Success",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestAdd/ADD_Failure",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestAdd",
         "status": "passed",
-        "duration": 0.1
+        "duration": 0.1,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestMul/MUL_Success",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestSub/SUB_Success",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestMul/MUL_Failure",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestMul",
         "status": "passed",
-        "duration": 0.1
+        "duration": 0.1,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestSub/SUB_Failure",
         "status": "failed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestSub",
         "status": "failed",
-        "duration": 0.1
+        "duration": 0.1,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestDiv/DIV_Success",
         "status": "passed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite1"
       },
       {
         "name": "TestDiv/DIV_Failure",
         "status": "failed",
-        "duration": 0.05
+        "duration": 0.05,
+        "suite": "Test Suite2"
       },
       {
         "name": "TestDiv",
         "status": "failed",
-        "duration": 0.1
+        "duration": 0.1,
+        "suite": "Test Suite2"
       }
     ]
   }
