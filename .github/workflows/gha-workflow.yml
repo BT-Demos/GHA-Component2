@@ -17,7 +17,7 @@ jobs:
         run: echo "Pushing Binary to ECR..."
 
       - name: Register Build Artifacts in Cloudbees Platform
-        uses: cloudbees-gha-cbp/register-build-artifact@v1
+        uses: cloudbees-gha-cbp/register-build-artifact@main
         id: go-action
         with:
           name: "GHA App"
@@ -29,7 +29,7 @@ jobs:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           
       - name: Publish Evidence
-        uses: https://github.com/Akki-gh-org/test-publish-evidence@main
+        uses: cloudbees-gha-cbp/publish-evidence-item@main
         with:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
