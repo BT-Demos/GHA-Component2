@@ -55,7 +55,7 @@ jobs:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           
       - name: Publish evidence
-        uses: cloudbees-gha-cbp/publish-evidence-item@v1
+        uses: cloudbees-gha-cbp/publish-evidence-item@main
         with:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
