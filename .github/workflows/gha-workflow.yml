@@ -31,7 +31,7 @@ jobs:
       - name: Publish evidence
         uses: cloudbees-gha-cbp/publish-evidence-item@main
         with:
-          cloudbees-pat: ${{ secrets.MY_PAT }}
+          cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
             # Sample Markdown evidence output
             Build Completed and artifacts published to Cloudbees platform
@@ -57,7 +57,7 @@ jobs:
       - name: Publish evidence
         uses: cloudbees-gha-cbp/publish-evidence-item@v1
         with:
-          cloudbees-pat: ${{ secrets.MY_PAT }}
+          cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
             # Sample Markdown evidence output
             Testing Completed and results published to Cloudbees platform
