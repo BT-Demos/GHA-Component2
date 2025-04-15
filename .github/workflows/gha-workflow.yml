@@ -33,7 +33,6 @@ jobs:
         with:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
-            # Sample Markdown evidence output
             Build Completed and artifacts published to Cloudbees platform
 
   test:
@@ -59,7 +58,6 @@ jobs:
         with:
           cloudbees-pat: ${{ secrets.CBP_PAT }}
           content: |-
-            # Sample Markdown evidence output
             Testing Completed and results published to Cloudbees platform
             Test | Results |
             --------|---------|
