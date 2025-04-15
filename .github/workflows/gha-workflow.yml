@@ -61,6 +61,11 @@ jobs:
           content: |-
             # Sample Markdown evidence output
             Testing Completed and results published to Cloudbees platform
+            Test | Results |
+            --------|---------|
+            Test 1 | PASS |
+            Test 2 | FAIL |
+            Test 3 | PASS |
 
 
   deploy:
